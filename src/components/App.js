@@ -2,16 +2,6 @@
 import './App.css';
 
 function App() {
-
-    const [foods, setFoods] = useState([ ]);
-    
-  
-    useEffect( () => {
-        fetch("")
-        .then((res) => res.json())
-        .then((data) => setFoods(data.data))
-       }, [] )
-
       
 
   return (
