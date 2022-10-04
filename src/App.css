@@ -13,6 +13,7 @@
   flex-direction: row;
   position: sticky;
   padding: 30px;
+  text-decoration: none;
 }
 
 .navbar {
@@ -85,6 +86,7 @@
   justify-content: center;
   align-items: center;
   background-image: url(../src/assets/grubhubLogo.png);
+  text-decoration: none;
   background-position: center;
   background-size: 200px 150px;
   background-repeat: no-repeat;
@@ -119,6 +121,7 @@
   justify-content: center;
   align-items: center;
   background-image: url(../src/assets/postmatesLogo.png);
+  text-decoration: none;
   background-position: center;
   background-size: 200px 150px;
   background-repeat: no-repeat;
@@ -153,6 +156,7 @@
   justify-content: center;
   align-items: center;
   background-image: url(../src/assets/doorDashLogo.png);
+  text-decoration: none;
   background-position: center;
   background-size: 200px 150px;
   background-repeat: no-repeat;
@@ -187,6 +191,7 @@
   justify-content: center;
   align-items: center;
   background-image: url(../src/assets/uberEatsLogo.png);
+  text-decoration: none;
   background-position: center;
   background-size: 200px 150px;
   background-repeat: no-repeat;
@@ -221,6 +226,7 @@
   justify-content: center;
   align-items: center;
   background-image: url(../src/assets/joyRunLogo.png);
+  text-decoration: none;
   background-position: center;
   background-size: 200px 150px;
   background-repeat: no-repeat;
