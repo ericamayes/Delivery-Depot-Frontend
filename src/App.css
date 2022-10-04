@@ -423,3 +423,41 @@
   opacity: 1;
 }
 
+.restaurant-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10rem;
+}
+
+.restaurant-page-header {
+  margin-left:7rem;
+}
+
+.delivery-picture {
+  width:13rem;
+}
+
+.restaurant-headers {
+  font-size: 6rem;
+  padding-left: 1rem;
+}
+
+.restaurant-page-form {
+  padding-left: 7rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cuisine-input {
+  width: 60rem;
+  font-size: 1.25rem;
+}
+
+.cuisine-submit {
+    height: 30px;
+    width: 180px;
+    font-size: 20px;
+}
+
