@@ -12,19 +12,19 @@ import { Link } from "react-router-dom";
 function RestaurantCards() {
 return (
     <div className="restaurant-cards">
-        <Link className="grubhub-logo" to="/grubhub">
+        <Link className="grubhub-logo" to="/restaurants/1">
             <p>GRUBHUB</p>
         </Link>
-        <Link className="postmates-logo" to="/postmates">
+        <Link className="postmates-logo" to="/restaurants/2">
             <p>POSTMATES</p>
         </Link>
-        <Link className="doordash-logo" to="/doordash">
+        <Link className="doordash-logo" to="/restaurants/3">
             <p>DOORDASH</p>
         </Link>
-        <Link className="uber-eats-logo" to="/ubereats">
+        <Link className="uber-eats-logo" to="/restaurants/4">
             <p>UBER EATS</p>
         </Link>
-        <Link className="joyrun-logo" to="/joyrun">
+        <Link className="joyrun-logo" to="/restaurants/5">
             <p>JOYRUN</p>
         </Link>
     </div>

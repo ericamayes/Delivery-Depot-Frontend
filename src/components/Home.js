@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from './NavBar';
 import deliveryDriver from '../assets/deliveryDriver.png';
 import RestaurantCards from './RestaurantCards'
+import RestaurantPage from "./RestaurantPage";
 
 
 function Home () {
