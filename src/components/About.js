@@ -29,7 +29,7 @@ function About() {
                 <p classname="about-name">Edward Dickey</p>
                 <ul>
                     <li><a href="https://www.linkedin.com/in/konstantin-stanmeyer-b06b88185/"> Linkedin</a></li>
-                    <li><a href="https://github.com/edwarddickey?tab=repositories">Github</a></li>
+                    <li><a href="https://github.com/konstantinstanmeyer">Github</a></li>
                 </ul>
             </div>
         </div>
