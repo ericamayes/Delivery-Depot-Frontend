@@ -248,3 +248,63 @@
   opacity: 1;
   transform: scale(1);
 }
+
+/* stuff for ordering page */
+
+.main-column {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.side-nav-bar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(203, 203, 217);
+  transition: width 200ms ease;
+}
+
+.side-bar-ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar-li {
+  width: 100%;
+}
+
+.side-bar-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.side-bar-text {
+  /* display: none;  */
+  opacity: 0%;
+  margin-left: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.side-nav-bar:hover {
+  width: 10rem;
+}
+
+.side-nav-bar:hover .side-bar-text {
+  /* display: block;  */
+  opacity: 100%;
+  transition: opacity 0.3s;
+}
+
+.list-icon {
+  height: 30px;
+  width: 30px;
+  padding-left: 1.7rem;
+}
