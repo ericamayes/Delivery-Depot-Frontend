@@ -1,52 +1,42 @@
-import React from "react";
+import React from "react"; 
+import NavBar from './NavBar';
+import deliveryDriver from '../assets/deliveryDriver.png';
+import RestaurantCards from './RestaurantCards'
 
 
 function Home () {
 
-    const [foods, setFoods] = useState([ ]);
+    // const [foods, setFoods] = useState([ ]);
     
   
-    useEffect( () => {
-        fetch("")
-        .then((res) => res.json())
-        .then((data) => setFoods(data.data))
-       }, [] )
+    // useEffect( () => {
+    //     fetch("")
+    //     .then((res) => res.json())
+    //     .then((data) => setFoods(data.data))
+    //    }, [] )
 
 
     return (
-        
-        <header>
-            <h1>
-              Delivery Depot
-              <span role="img">
-                <img className="logo" src="https://png.pngitem.com/pimgs/s/208-2089295_transparent-moving-png-images-transportation-transparent-background-png.png"></img>
-              </span>
-            </h1>
-            <nav>
-              <div className="navigation">
-                  <button>
-                    <NavLink className="button" exact to="/">
-                      Home
-                    </NavLink>
-                  </button>
-                  <button>
-                    <NavLink className="button" to="/About">
-                      About
-                    </NavLink>
-                  </button>
-                  <button>
-                    <NavLink className="button" to="/Contact">
-                      Contact
-                    </NavLink>
-                  </button>
-                  <button>
-                    <NavLink className="button" to="/Help">
-                      Help
-                    </NavLink>
-                  </button>
-              </div>
-            </nav>
-        </header>
+      <div className='Home'>
+        <NavBar />
+        <div className="container">
+        <div className="text-container">
+          <h1>Delivery in under an hour GUARANTEED</h1>
+          <h3>or your money back</h3>
+        </div>
+          <img className="delivery-image" alt="driver on scooter delivering food" src={deliveryDriver}/>
+        </div>
+        <RestaurantCards />
+        <div className="form">
+          <form className="zipcode-form">
+            <label>
+              <input className="form-input" type="text" placeholder="Enter your zipcode..."/>
+            </label>
+            <input className="submit" type="submit" value="Submit" />
+          </form>
+          </div>
+        </div>
+
       );
     }
 

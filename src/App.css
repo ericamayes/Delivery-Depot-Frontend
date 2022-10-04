@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+.logo {
+  font-size: 1.25em;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: transparent;
+  text-shadow: 0 0 0 var(--green);
+  max-height: 50px;
+  max-width: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-links {
+  display: flexbox;
+  flex-direction: row;
+  position: sticky;
+  padding: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  margin-left: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin:0;
+  padding: 0;
+  background-color: rgb(203, 203, 217);
+}
+
+.delivery-image {
+  width: 300px;
+  height: 450px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.text-container {
+ width: 275px;
+ padding: 20px;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.zipcode-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input {
+    font-size: 30px;
+    width: 400px;
+}
+
+.submit {
+  height: 42px;
+  width: 180px;
+  font-size: 25px;
+}
+
+.grubhub-logo {
+  border-radius: 25px;
+  background: rgb(203, 203, 217);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-right: 40px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/grubhubLogo.png);
+  background-position: center;
+  background-size: 200px 150px;
+  background-repeat: no-repeat;
+}
+
+.grubhub-logo p{
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.8s;
+  font-size: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.grubhub-logo:hover{
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.9) inset;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grubhub-logo:hover p{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.postmates-logo {
+  border-radius: 25px;
+  background: rgb(203, 203, 217);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-right: 40px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/postmatesLogo.png);
+  background-position: center;
+  background-size: 200px 150px;
+  background-repeat: no-repeat;
+}
+
+.postmates-logo p{
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.8s;
+  font-size: 2rem;
+  color: white;
+}
+
+.postmates-logo:hover{
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.9) inset;
+}
+
+.postmates-logo:hover p{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.doordash-logo {
+  border-radius: 25px;
+  background: rgb(203, 203, 217);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-right: 40px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/doorDashLogo.png);
+  background-position: center;
+  background-size: 200px 150px;
+  background-repeat: no-repeat;
+}
+
+.doordash-logo p{
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.8s;
+  font-size: 2rem;
+  color: white;
+}
+
+.doordash-logo:hover{
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.9) inset;
+}
+
+.doordash-logo:hover p{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.uber-eats-logo {
+  border-radius: 25px;
+  background: rgb(203, 203, 217);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-right: 40px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/uberEatsLogo.png);
+  background-position: center;
+  background-size: 200px 150px;
+  background-repeat: no-repeat;
+}
+
+.uber-eats-logo p{
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.8s;
+  font-size: 2rem;
+  color: white;
+}
+
+.uber-eats-logo:hover{
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.9) inset;
+}
+
+.uber-eats-logo:hover p{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.joyrun-logo {
+  border-radius: 25px;
+  background: rgb(203, 203, 217);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  margin-right: 40px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/joyRunLogo.png);
+  background-position: center;
+  background-size: 200px 150px;
+  background-repeat: no-repeat;
+}
+
+.joyrun-logo p{
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.8s;
+  font-size: 2rem;
+  color: white;
+}
+
+.joyrun-logo:hover{
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.9) inset;
+}
+
+.joyrun-logo:hover p{
+  opacity: 1;
+  transform: scale(1);
 }
