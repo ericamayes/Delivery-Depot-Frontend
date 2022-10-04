@@ -1,3 +1,5 @@
+import React from "react"; 
+
 function Contact (){
     return(
         <div>
@@ -11,3 +13,4 @@ function Contact (){
         </div>
     )
 }
+export default Contact;

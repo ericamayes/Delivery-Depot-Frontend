@@ -1,16 +1,15 @@
-function About() {
+import React from "react"; 
+
+function About () {
     return(
         <div>
             <span role="img" classname="logo-head">
                 <img className="logo" src="https://png.pngitem.com/pimgs/s/208-2089295_transparent-moving-png-images-transportation-transparent-background-png.png"></img>
             <h1>Delivery Depot</h1>
               </span>
-            
         <h1 classname="head"> About Us</h1>
             <p>We have created a database for food delivery that allows a user on the front end to send a request for a dish to a given restaurant and delivery service.</p>
         <div className="about">
-            
-        
             <div className="about-card">
                 <p classname="about-name"> Erica Hashert</p>
                 <ul>
@@ -37,4 +36,4 @@ function About() {
     )
 }
 
-export default About 
+export default About;

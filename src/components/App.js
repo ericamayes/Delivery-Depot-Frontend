@@ -1,43 +1,34 @@
 // import logo from './logo.svg';
 import '../App.css';
-import About from './About.js'
+import Home from './Home'
+import Contact from './Contact'
+import Orders from './Orders'
+import About from './About'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-      
-
   return (
-    <About/>
+   
   
 
-    // <div className="app">
-    //   <Header />
-  
-    //   <Switch>
-    //       <Route exact path="/">
-    //           <Home foods={foods}/>
-    //       </Route>
-          
-    //       <Route path="/About">
-    //           <About foods={foods}/>
-    //       </Route>
-         
-
-    //       <Route path="/Contact">
-    //           <Contact />
-    //       </Route>
-
-    //       <Route path="/Help">
-    //           <Help/>
-    //       </Route>
-        
-    //     </Switch>
-      
-      
-      
-    // </div>
-
-
-
+    <div className="app">  
+      <Router>
+        <Routes>
+            <Route exact path="/" element={
+                <Home />
+            }/>
+            <Route path="/orders" element={
+                <Orders />
+            }/>
+            <Route path="/contact" element={
+                <Contact />
+            }/>
+            <Route path="/about" element={
+                <About />
+            }/>
+            </Routes>        
+        </Router>
+    </div>
 )};
 
 export default App;
