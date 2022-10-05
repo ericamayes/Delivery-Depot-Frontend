@@ -4,6 +4,7 @@ import Home from './Home'
 import Contact from './Contact'
 import Orders from './Orders'
 import About from './About'
+import RestaurantPage from './RestaurantPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
             }/>
             <Route path="/orders" element={
                 <Orders />
+            }/>
+            <Route path="/restaurants/:id" element={
+                <RestaurantPage />
             }/>
             <Route path="/contact" element={
                 <Contact />

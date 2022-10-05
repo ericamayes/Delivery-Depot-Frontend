@@ -88,7 +88,7 @@
   background-image: url(../src/assets/grubhubLogo.png);
   text-decoration: none;
   background-position: center;
-  background-size: 200px 150px;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -158,7 +158,7 @@
   background-image: url(../src/assets/doorDashLogo.png);
   text-decoration: none;
   background-position: center;
-  background-size: 200px 150px;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -193,7 +193,7 @@
   background-image: url(../src/assets/uberEatsLogo.png);
   text-decoration: none;
   background-position: center;
-  background-size: 200px 150px;
+  background-size: contain;;
   background-repeat: no-repeat;
 }
 
@@ -247,4 +247,236 @@
 .joyrun-logo:hover p{
   opacity: 1;
   transform: scale(1);
+}
+
+/* stuff for ordering page */
+
+.main-column {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding: 1rem;
+  margin-right: 15rem;
+}
+
+.side-nav-bar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(203, 203, 217);
+  transition: width 200ms ease;
+}
+
+.side-bar-ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar-li {
+  width: 100%;
+}
+
+.side-bar-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.side-bar-text {
+  /* display: none;  */
+  opacity: 0%;
+  margin-left: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+.side-nav-bar:hover {
+  width: 10rem;
+}
+
+.side-nav-bar:hover .side-bar-text {
+  /* display: block;  */
+  opacity: 100%;
+  transition: opacity 0.3s;
+}
+
+.list-icon {
+  height: 30px;
+  width: 30px;
+  padding-left: 1.7rem;
+}
+
+.order-column {
+  background-color: rgb(203, 203, 217);
+  width: 15rem;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+}
+
+.order-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.order-column h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-left: 1rem;
+}
+
+.order-column-top p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.order-column-top {
+  padding-left: 1rem;
+}
+
+.dropdown {
+  width: 7rem;
+  position: relative;
+  margin: 2em;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.dropdown-select {
+  background: #2a2f3b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #2a2f3b solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3;
+}
+
+.dropdown-select-clicked {
+  border: 2px #26489a solid;
+  box-shadow: 0 0 0.8em #26489a;
+}
+
+.dropdown-select:hover {
+  background: #323741;
+}
+
+.dropdown-caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+
+.dropdown-caret-rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: #323741;
+  border: 1px #363a43;
+  box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+  border-radius: 0.5em;
+  color: #9fa5b5;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #2a2d35;
+}
+
+.active {
+  background: #23242a;
+}
+
+.dropdown-menu-open {
+  display: block;
+  opacity: 1;
+}
+
+.restaurant-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 60px;
+  height: 5rem;
+}
+
+.delivery-picture {
+  width: 9rem;
+  padding-right: 1rem;
+}
+
+.cards {
+  list-style: none;
+}
+
+.individual-card {
+  margin: 1rem;
+}
+
+.individual-card img {
+  width: 100%;
+  aspect-ratio: inherent;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .individual-card {
+    width: calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .individual-card {
+    width: calc(25% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {}
+  .individual-card {
+    width: calc(20% - 2rem);
+  }
+
+.cuisine-input {
+  width: 60rem;
+  font-size: 1.15rem;
+}
+
+.restaurant-page {
+  display: flex;
+  flex-direction: row;
 }

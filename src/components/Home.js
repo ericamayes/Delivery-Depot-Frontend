@@ -1,7 +1,8 @@
 import React from "react"; 
 import NavBar from './NavBar';
 import deliveryDriver from '../assets/deliveryDriver.png';
-import RestaurantCards from './RestaurantCards'
+import DeliveryCards from './DeliveryCards'
+import RestaurantPage from "./RestaurantPage";
 
 
 function Home () {
@@ -26,7 +27,7 @@ function Home () {
         </div>
           <img className="delivery-image" alt="driver on scooter delivering food" src={deliveryDriver}/>
         </div>
-        <RestaurantCards />
+        <DeliveryCards />
         <div className="form">
           <form className="zipcode-form">
             <label>
