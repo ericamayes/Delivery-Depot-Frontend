@@ -90,8 +90,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  /* asdasodihfoaishf */
-  box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.37); 
 }
 
 .grubhub-logo p{
@@ -425,6 +423,7 @@
   opacity: 1;
 }
 
+<<<<<<< HEAD
 .test222 {
   box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.37);
   position: relative;
@@ -433,3 +432,64 @@
   width: 200px;
   height: 150px;
 }
+=======
+.restaurant-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 60px;
+  height: 5rem;
+}
+
+.delivery-picture {
+  width: 9rem;
+  padding-right: 1rem;
+}
+
+.cards {
+  list-style: none;
+}
+
+.individual-card {
+  margin: 1rem;
+}
+
+.individual-card img {
+  width: 100%;
+  aspect-ratio: inherent;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .individual-card {
+    width: calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .individual-card {
+    width: calc(25% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {}
+  .individual-card {
+    width: calc(20% - 2rem);
+  }
+
+.cuisine-input {
+  width: 60rem;
+  font-size: 1.15rem;
+}
+
+.cuisine-submit {
+  width: 5rem;
+  font-size: 1.15rem;
+}
+
+
+>>>>>>> c2ca89d3530c8c47580d08b012967aabe8d91057

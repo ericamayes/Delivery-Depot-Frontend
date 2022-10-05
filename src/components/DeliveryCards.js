@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 
-function RestaurantCards() {
+function DeliveryCards() {
 return (
     <div className="restaurant-cards">
         <Link className="grubhub-logo logo2" to="/restaurants/1">
@@ -31,4 +31,4 @@ return (
 )}
 
 
-export default RestaurantCards;
+export default DeliveryCards;
