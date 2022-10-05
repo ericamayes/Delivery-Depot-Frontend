@@ -423,16 +423,6 @@
   opacity: 1;
 }
 
-<<<<<<< HEAD
-.test222 {
-  box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.37);
-  position: relative;
-  border-radius: 25px;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
-=======
 .restaurant-header {
   display: flex;
   flex-direction: row;
@@ -486,10 +476,7 @@
   font-size: 1.15rem;
 }
 
-.cuisine-submit {
-  width: 5rem;
-  font-size: 1.15rem;
+.restaurant-page {
+  display: flex;
+  flex-direction: row;
 }
-
-
->>>>>>> c2ca89d3530c8c47580d08b012967aabe8d91057
