@@ -90,6 +90,8 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  /* asdasodihfoaishf */
+  box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.37); 
 }
 
 .grubhub-logo p{
@@ -423,3 +425,11 @@
   opacity: 1;
 }
 
+.test222 {
+  box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.37);
+  position: relative;
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
