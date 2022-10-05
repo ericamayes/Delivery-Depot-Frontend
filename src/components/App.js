@@ -5,6 +5,7 @@ import Contact from './Contact'
 import Orders from './Orders'
 import About from './About'
 import RestaurantPage from './RestaurantPage';
+import DishesPage from './DishesPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
             <Route exact path="/" element={
                 <Home />
             }/>
-            <Route path="/orders" element={
-                <Orders />
+            <Route path="/restaurants/:id/order" element={
+                <DishesPage />
             }/>
             <Route path="/restaurants/:id" element={
                 <RestaurantPage />
