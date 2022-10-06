@@ -54,6 +54,7 @@
   align-items: center;
   justify-content: center;
   height: 400px;
+  width: 100%;
 }
 
 .zipcode-form {
@@ -80,7 +81,7 @@
   padding: 20px;
   width: 200px;
   height: 150px;
-  margin-right: 40px;
+  margin: 20px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -90,6 +91,8 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-size: 230px 150px;
+  min-width: 180px;
 }
 
 .grubhub-logo p{
@@ -115,7 +118,7 @@
   padding: 20px;
   width: 200px;
   height: 150px;
-  margin-right: 40px;
+  margin: 20px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -150,7 +153,7 @@
   padding: 20px;
   width: 200px;
   height: 150px;
-  margin-right: 40px;
+  margin: 20px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -185,7 +188,7 @@
   padding: 20px;
   width: 200px;
   height: 150px;
-  margin-right: 40px;
+  margin: 20px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -195,6 +198,8 @@
   background-position: center;
   background-size: contain;;
   background-repeat: no-repeat;
+  background-size: 130px 150px;
+  min-width: 180px;
 }
 
 .uber-eats-logo p{
@@ -220,7 +225,7 @@
   padding: 20px;
   width: 200px;
   height: 150px;
-  margin-right: 40px;
+  margin: 20px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -228,8 +233,9 @@
   background-image: url(../src/assets/joyRunLogo.png);
   text-decoration: none;
   background-position: center;
-  background-size: 200px 150px;
+  background-size: 150px 150px;
   background-repeat: no-repeat;
+  min-width: 180px;
 }
 
 .joyrun-logo p{
@@ -253,17 +259,17 @@
 
 .main-column {
   margin-left: 5rem;
-  margin-right: 5rem;
-  padding: 1rem;
-  margin-right: 15rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .side-nav-bar {
   width: 5rem;
   height: 100vh;
   position: fixed;
-  background-color: rgb(203, 203, 217);
+  background-color: black;
   transition: width 200ms ease;
+  z-index: 1;
 }
 
 .side-bar-ul{
@@ -292,7 +298,7 @@
   margin-left: 1rem;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: black;
+  color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
 }
@@ -311,10 +317,11 @@
   height: 30px;
   width: 30px;
   padding-left: 1.7rem;
+  filter: invert(100%);
 }
 
 .order-column {
-  background-color: rgb(203, 203, 217);
+  background-color: black;
   width: 15rem;
   height: 100vh;
   position: fixed;
@@ -329,98 +336,16 @@
 .order-column h3 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-left: 1rem;
+  color: white;
 }
 
 .order-column-top p{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
 }
 
 .order-column-top {
   padding-left: 1rem;
-}
-
-.dropdown {
-  width: 7rem;
-  position: relative;
-  margin: 2em;
-}
-
-.dropdown * {
-  box-sizing: border-box;
-}
-
-.dropdown-select {
-  background: #2a2f3b;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px #2a2f3b solid;
-  border-radius: 0.5em;
-  padding: 1em;
-  cursor: pointer;
-  transition: background 0.3;
-}
-
-.dropdown-select-clicked {
-  border: 2px #26489a solid;
-  box-shadow: 0 0 0.8em #26489a;
-}
-
-.dropdown-select:hover {
-  background: #323741;
-}
-
-.dropdown-caret {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid #fff;
-  transition: 0.3s;
-}
-
-.dropdown-caret-rotate {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  list-style: none;
-  padding: 0.2em 0.5em;
-  background: #323741;
-  border: 1px #363a43;
-  box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
-  border-radius: 0.5em;
-  color: #9fa5b5;
-  position: absolute;
-  top: 3em;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  opacity: 0;
-  display: none;
-  transition: 0.2s;
-  z-index: 1;
-}
-
-.dropdown-menu li {
-  padding: 0.7em 0.5em;
-  margin: 0.3em 0;
-  border-radius: 0.5em;
-  cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-  background: #2a2d35;
-}
-
-.active {
-  background: #23242a;
-}
-
-.dropdown-menu-open {
-  display: block;
-  opacity: 1;
 }
 
 .restaurant-header {
@@ -429,10 +354,19 @@
   align-items: center;
   font-size: 60px;
   height: 5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.restaurant-header h1{
+  padding: 0;
+  margin: 0;
 }
 
 .delivery-picture {
-  width: 9rem;
+  width: 4rem;
+  margin-left: 3.7rem;
+  margin-top: 0.8rem;
   padding-right: 1rem;
 }
 
@@ -472,13 +406,73 @@
   }
 
 .cuisine-input {
-  width: 60rem;
+  height: 3rem;
+  width: 60%;
   font-size: 1.15rem;
+  margin-left: 3rem;
+  text-indent: 1rem;
 }
 
 .restaurant-page {
   display: flex;
   flex-direction: row;
+}
+
+.restaurant-page-form {
+  justify-content: center;
+}
+
+ul.cards {
+  padding-right: 17.4rem;
+}
+
+.cuisine-form {
+  justify-content: center;
+  margin-left: .5rem;
+  padding-top: 0.9rem;
+}
+
+.sponsored-pic {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20rem;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: 50% 65%;
+}
+
+.sponsored-restaurant {
+  display: flex;
+  margin-left: 3.4rem;
+  position: relative;
+  padding-top: 0.3rem;
+  margin-right: 18.4rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.sponsor-text {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  bottom: 0;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  background-color: #fed614;
+  font-weight: 900;
+  border-radius: 15px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.order-line-break {
+  width: 5rem;
+  color: red;
 }
 #about {
   display:flex;
@@ -531,5 +525,4 @@
 .contact {
   text-align: center;
   list-style-type: none;
-  
 }
