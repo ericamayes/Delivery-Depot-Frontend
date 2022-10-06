@@ -346,6 +346,10 @@
 
 .order-column-top {
   padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .restaurant-header {
@@ -473,6 +477,7 @@ ul.cards {
 .order-line-break {
   width: 5rem;
   color: red;
+  z-index: 1;
 }
 #about {
   display:flex;
@@ -525,4 +530,20 @@ ul.cards {
 .contact {
   text-align: center;
   list-style-type: none;
+}
+
+.address-text-small {
+  padding: 0;
+  color: white;
+  padding-right: 1rem;
+  margin: 0;
+}
+
+.address-input {
+  margin: 0;
+}
+
+.deliver-to {
+  padding: 0;
+  margin: 0;
 }
