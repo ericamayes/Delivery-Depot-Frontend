@@ -7,6 +7,9 @@ function DishCard( {restaurant} ) {
       <img src={image_url} alt={name} />
       <h4>{name}</h4>
       <p>Category: {category}</p>
+      <btn className = "order-btn">
+        Add to order
+      </btn>
     </li>
   );
 }

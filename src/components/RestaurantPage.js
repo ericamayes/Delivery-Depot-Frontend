@@ -63,6 +63,14 @@ function RestaurantPage () {
     setAddress("");
   }
 
+  let unknownAddress = [
+    <span className="unknown-km address-text-small">📍 ? km 🕑 ? mins</span>
+  ]
+
+  let confirmedAddress = [
+    <span className="known-km address-text-small">📍 {Math.floor(Math.random() * 11)} km 🕑 {Math.floor(Math.random() * 21)} mins</span>
+  ]
+
   return (
     <div className="restaurant-page">
       <SideBar />
@@ -83,9 +91,10 @@ function RestaurantPage () {
       <div className="order-column">
         <h3>My Order:</h3>
         <div className="order-column-top">
-            <p>Deliver to:</p>
+            <p className="deliver-to">Deliver to:</p>
             <p className="address-text">{address ? address : <AddressForm addressChange={addressChange} onAddressChange={onAddressChange} handleAddressSubmit={handleAddressSubmit}/>}</p>
             {address ? <button onClick={handleClick}>change address</button> : null}
+            {address ? confirmedAddress : unknownAddress}
         </div>
         <br className="order-line-break"/>
       </div>
