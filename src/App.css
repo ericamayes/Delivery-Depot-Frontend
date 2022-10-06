@@ -380,10 +380,11 @@
 
 .individual-card {
   margin: 1rem;
+  
 }
 
 .individual-card img {
-  width: 100%;
+  width: 150px;
   aspect-ratio: inherent;
 }
 
