@@ -1,23 +1,26 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from 'react';
-import { UserContext } from './CreateContext';
+// import Card from 'react-bootstrap/Card'
 
 function RestaurantCard( {service, id} ) {
   const {name, category, image_url} = service;
-  const { restaurantId, setRestaurantId } = useContext(UserContext)
 //   should we also do rating? can't access it from the current table, though
-
-  function handleClick(){
-    setRestaurantId(service.id)
-    navigate(`/restaurants/${id}/order`)
-  }
 
   const navigate = useNavigate();
   return (
-      <li onClick={handleClick} className="individual-card">
-        <img src={image_url} alt={name} />
-        <h4>{name}</h4>
-        <p>Category: {category}</p>
+      <li onClick={() => navigate(`/restaurants/order/${service.id}`)} className="individual-card">
+        <div className="container-card">
+          <div className="row">
+            <div className="col">
+              <div className="card h-100">
+                <img className="card-image" variant="top" src={image_url} alt={name}/>
+                <div className="card-text">
+                  <h3>{name}</h3>
+                  <p><em>{category}</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </li>
   );
 }

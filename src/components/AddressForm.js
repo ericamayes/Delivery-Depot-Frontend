@@ -10,7 +10,7 @@ export default function AddressForm({ handleAddressSubmit, onAddressChange, addr
             onChange={(e) => onAddressChange(e.target.value)}
             placeholder="Enter Address..."
             />
-            <button type="submit">confirm</button>
+            <button className="confirm-button" type="submit">confirm</button>
         </form>
     )
 }

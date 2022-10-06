@@ -261,6 +261,7 @@
   margin-left: 5rem;
   display: flex;
   flex-direction: column;
+  width: 100rem;
 }
 
 .side-nav-bar {
@@ -313,7 +314,7 @@
   transition: opacity 0.3s;
 }
 
-.list-icon {
+.list-icon2 {
   height: 30px;
   width: 30px;
   padding-left: 1.7rem;
@@ -326,6 +327,7 @@
   height: 100vh;
   position: fixed;
   right: 0;
+  overflow: auto;
 }
 
 .order-page {
@@ -337,6 +339,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-left: 1rem;
   color: white;
+  font-size: 2rem;
 }
 
 .order-column-top p{
@@ -411,15 +414,19 @@
 
 .cuisine-input {
   height: 3rem;
-  width: 60%;
   font-size: 1.15rem;
   margin-left: 3rem;
   text-indent: 1rem;
+  min-width: 70%;
 }
 
 .restaurant-page {
   display: flex;
   flex-direction: row;
+}
+
+.individual-card {
+  width: calc(33% - 2rem);
 }
 
 .restaurant-page-form {
@@ -434,12 +441,16 @@ ul.cards {
   justify-content: center;
   margin-left: .5rem;
   padding-top: 0.9rem;
+  position: relative;
+  margin-right: 20rem;
+  width: 31rem;
+  margin-left: 24.4%;
 }
 
 .sponsored-pic {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 99%;
   height: 20rem;
   border-radius: 15px;
   object-fit: cover;
@@ -462,7 +473,7 @@ ul.cards {
   padding: 0;
   right: 0;
   bottom: 0;
-  margin-right: 1rem;
+  margin-right: 1.6rem;
   font-size: 1rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: black;
@@ -540,10 +551,177 @@ ul.cards {
 }
 
 .address-input {
+  padding: 10px;
   margin: 0;
+  width: 7rem;
+  border-radius: 15px 0px 0px 30px;
+  border: 2px solid black;
+  background-color: white;
+  text-indent: 13px;
 }
 
 .deliver-to {
   padding: 0;
   margin: 0;
+}
+
+.load-page {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  color: white;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.spinned {
+  position: absolute;
+  animation: rotation 2s infinite linear;
+  width: 10rem;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.loading-logo {
+  width: 5rem;
+  position: absolute;
+}
+
+.address-text {
+  margin: 0;
+  padding-top: .4rem;
+  padding-bottom: 0.7rem;
+}
+
+.known-km {
+  font-size: 0.8em;
+  padding-bottom: 0.7rem;
+}
+
+.unknown-km {
+  font-size: 0.8em;
+}
+
+.change-address-button {
+  width: 8rem;
+}
+
+.col {
+  height: 20rem;
+}
+
+.card {
+  background-color: rgb(31, 30, 30);
+  color: white;
+  border-radius: 2% 2% 2% 2%;
+  border: 0.5px solid black;
+  border-right: 1.9px solid black;
+}
+
+.card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  border-radius: 2% 2% 0 0;
+  border: 0.5px solid black;
+}
+
+.card-text {
+  margin-left: 1rem;
+  padding-bottom: 0.4;
+}
+
+.promo-input {
+    border-radius: 15px 50px 30px;
+    padding:15px; 
+    text-indent: 20px;
+    width: 150px;
+    height: 15px; 
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.confirm-button{
+  border-radius: 0px 50px  30px 0px;
+  padding: 10px;
+  padding-left: 5px;
+  top: 10px;
+  border: 1px solid #fed614;
+  background-color: black;
+  color: white;
+}
+
+.confirm-button:hover{
+  color: black;
+  background-color: #fed614;
+}
+
+.address-area{
+  margin-top: 0.5rem;
+  align-items: center;
+  position: relative;
+}
+
+.subtotal{
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.checkout-info {
+  bottom: 0;
+}
+
+.order-card {
+  position: relative;
+  height: 5rem;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1;
+  width: 13rem;
+  margin-top: 1rem;
+}
+
+.order-card-dish {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: -10px;
+  z-index: 2;
+  left: 75px;
+}
+
+.order-card-restaurant {
+  color: black;
+  position: absolute;
+  z-index: 2;
+  left: 75px;
+  top: 5px;
+}
+
+.order-card-price {
+  color: black;
+  position: absolute;
+  z-index: 2;
+  left: 75px;
+  top: 18px;
+}
+
+.order-card-image {
+  position: absolute;
+  z-index: 1;
+  height: 3rem;
+  width: 3rem;
+  object-fit: cover;
+  border-radius: 5px;
+  top: 1.1em;
+  left: 1em;
 }

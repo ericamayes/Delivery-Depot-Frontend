@@ -1,11 +1,8 @@
-import React, {useEffect, useContext} from "react";
-import { UserContext } from "./CreateContext";
+import React, {useEffect} from "react";
 
 export default function DishesPage(){
-    const { restaurantId, setRestaurantId } = useContext(UserContext)
-
     useEffect(() => {
-        fetch(`http://localhost:9292/restaurants/${restaurantId}/dishes`)
+        fetch(`http://localhost:9292/restaurants/${window.location.href.split(/\//)[5]}/dishes`)
         .then(r => r.json())
         .then(data => {
             console.log(data)
