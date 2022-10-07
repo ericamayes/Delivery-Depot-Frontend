@@ -29,6 +29,7 @@ console.log(window.location.href.substring(-7))
   if (!restaurant) return <h2>Loading available restaurants...</h2>;
 // REWRITE FILTER METHOD HERE
   const displayedDishes = restaurant
+  //console.log(service)
 
 
   return (

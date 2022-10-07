@@ -2,6 +2,7 @@ function DishCard( {restaurant} ) {
   const {name,  price, image_url} = restaurant;
 
   function handleClick(){
+    console.log(restaurant);
 
   }
   
@@ -13,7 +14,7 @@ function DishCard( {restaurant} ) {
       <h4>{name}</h4>
       
       <p>Price: {price}</p>
-      <btn className = "order-btn">
+      <btn className = "order-btn" onClick={handleClick}>
         Add to order
       </btn>
     </li>
