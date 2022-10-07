@@ -66,6 +66,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .form-input {
@@ -648,6 +649,7 @@ ul.cards {
   padding-bottom: 0.4;
 }
 
+
 .promo-input {
     border-radius: 15px 50px 30px;
     padding:15px; 
@@ -870,4 +872,42 @@ ul.cards {
   color: black;
   top: 2rem;
   left: 8.5rem;
+}
+.order-btn {
+  background-color: black;
+  color: white;
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  border-radius: 2% 2% 2% 2%;
+  
+}
+
+/* .dish-card {
+  border-radius: 2% 2% 2% 2%;
+} */
+
+.dish-card-header {
+  margin-left: .5rem;
+  padding-bottom: 0.4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: .5rem;
+  height: 1.5rem;
+  margin-top: .5rem;
+}
+
+.dish-price {
+  margin-left: .5rem;
+  margin-top: .3rem;
+}
+
+.dishes-col {
+    height: 20rem;
 }

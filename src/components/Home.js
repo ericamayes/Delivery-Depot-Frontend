@@ -6,7 +6,7 @@ import DeliveryCards from './DeliveryCards';
 
 function Home () {
   return (
-    <div className='Home'>
+    <div className='home'>
       <NavBar />
       <div className="container">
       <div className="text-container">
