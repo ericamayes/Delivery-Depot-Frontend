@@ -911,3 +911,27 @@ ul.cards {
 .dishes-col {
     height: 20rem;
 }
+
+.change-restaurant {
+  margin-left: 3.7rem;
+  background-color: black;
+  color: white;
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  width: 9rem;
+  border-radius: 6px;
+  height: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+  text-decoration: none;
+}
+
+  a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+  .change-restaurant-link {
+    text-decoration: none;
+  }

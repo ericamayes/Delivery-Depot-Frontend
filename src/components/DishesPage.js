@@ -12,8 +12,6 @@ function DishPage () {
     const [header, setHeader] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
     
-    const [id, setId] = useState(null);
-
    
 
     useEffect(() => {
@@ -38,15 +36,21 @@ console.log(window.location.href.substring(-7))
       <div className="main-column">
         <div className="restaurant-header">
           <span role="img">
-              <img className="delivery-picture" src="https://cdn-icons-png.flaticon.com/512/1048/1048329.png"></img>
+            <a href="/">            
+                <img className="delivery-picture" src="https://cdn-icons-png.flaticon.com/512/1048/1048329.png"></img>
+            </a>
           </span>
-          <h1 className="restaurant-header"></h1>
+          <h1 className="restaurant-header">Uber Eats</h1>
           </div>
+          <btn className="change-restaurant">
+            <a className="change-restaurant-link" href="/">
+                Change Restaurant
+            </a>
+          </btn>
 
 
 
  
-        <RestaurantSearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
         <DishList restaurants={displayedDishes}/>
       </div>
       <div className="order-column">
