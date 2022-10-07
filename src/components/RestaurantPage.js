@@ -140,7 +140,7 @@ const number2 = Math.floor(Math.random() * 20)
               <img className="delivery-picture" src="https://cdn-icons-png.flaticon.com/512/1048/1048329.png"></img>
             </a>
           </span>
-          <h1 className="restaurant-header">Uber Eats</h1>
+          <h1 className="restaurant-header">{header}</h1>
         </div>
         <div className="sponsored-restaurant">
           <img className="sponsored-pic" src="https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"/>
