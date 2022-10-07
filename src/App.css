@@ -805,7 +805,7 @@ ul.cards {
 
 .primary {
   border-radius: 2% 2% 2% 2%;
-  margin-top: 1rem;
+  
 }
 
 /* .dish-card {
@@ -821,10 +821,12 @@ ul.cards {
   align-items: center;
   margin-right: .5rem;
   height: 1.5rem;
+  margin-top: .5rem;
 }
 
 .dish-price {
   margin-left: .5rem;
+  margin-top: .3rem;
 }
 
 .dishes-col {

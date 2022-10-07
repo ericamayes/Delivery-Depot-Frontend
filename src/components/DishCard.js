@@ -28,7 +28,7 @@ function DishCard( {restaurant} ) {
                                         </btn>
                                     </div>
                             </div>
-                                <p className="dish-price"> ${price}</p>
+                        <p className="dish-price"> ${price}</p>
                     </div>
                 </div>
             </div>
