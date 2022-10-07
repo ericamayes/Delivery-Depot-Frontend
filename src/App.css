@@ -880,16 +880,12 @@ ul.cards {
   font-family: inherit;
   border: none;
   cursor: pointer;
+  padding-bottom: .3rem;
 }
 
 .primary {
   border-radius: 2% 2% 2% 2%;
-  
 }
-
-/* .dish-card {
-  border-radius: 2% 2% 2% 2%;
-} */
 
 .dish-card-header {
   margin-left: .5rem;
@@ -934,4 +930,5 @@ ul.cards {
 
   .change-restaurant-link {
     text-decoration: none;
+    line-height: 1.4rem;
   }
