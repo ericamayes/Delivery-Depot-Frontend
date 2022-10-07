@@ -826,3 +826,7 @@ ul.cards {
 .dish-price {
   margin-left: .5rem;
 }
+
+.dishes-col {
+    height: 20rem;
+}

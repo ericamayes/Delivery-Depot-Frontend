@@ -13,11 +13,15 @@ function DishCard( {restaurant} ) {
       <li className="individual-card">
         <div className="container-card">
             <div className="row">
-                <div className="col">
+                <div className="dishes-col">
                     <div className="dish-card h-100">
                         <img className="card-image" variant="top" src={image_url} alt={name} />
                             <div className="dish-card-header">
-                                <h4>{name}</h4>
+                                {name.length > 17 ? (
+                                <h4>{name.slice(0,17)}...</h4>
+                                 ) : (
+                                  <h4>{name}</h4> 
+                                 )}
                                     <div className="primary">
                                         <btn className = "order-btn" onClick={handleClick}>
                                             Add to order
