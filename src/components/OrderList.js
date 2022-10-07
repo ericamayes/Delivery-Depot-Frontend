@@ -1,15 +1,12 @@
 import React from 'react';
 import OrderCards from './OrderCards';
 
-export default function OrderList({ orders }){
-    const orderCards = orders.map((order) => {
-        return (
-            <OrderCards order={order} />
-        )
-    })
+export default function OrderList({ order }){
+    console.log(order)
+
     return(
         <div>
-            {orderCards}
+            <OrderCards item={order}/>
         </div>
     )
 }

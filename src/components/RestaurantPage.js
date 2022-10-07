@@ -19,7 +19,8 @@ function RestaurantPage () {
     const [deliveryFee, setDeliveryFee] = useState(0);
     const [total, setTotal] = useState(0);
     const [promo, setPromo] = useState("");
-    const [orders, setOrders] = useState(null);
+    const [order, setOrder] = useState([]);
+    const [ratings, setRatings] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:9292/delivery/${window.location.href.slice(-1)}/restaurants`)
@@ -28,14 +29,35 @@ function RestaurantPage () {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:9292/restaurants/5/ratings`)
-    .then((r) => r.json())
-  .then(r => console.log(r));
-}, []);
+    getTotal(order)
+  }, [order])
+
+const number1 = Math.floor(Math.random() * 10)
+
+const number2 = Math.floor(Math.random() * 20)
+
+  useEffect(() => {
+    const foodOrders =
+      {
+        name: "Cheeseburger",
+        restaurant_name: "Red Star Noodle",
+        price: 14,
+        image_url: "https://loremflickr.com/300/400/food,meal"
+      }
+    setOrder(foodOrders);
+  }, [])
 
   useEffect(() => {
     setId(window.location.href.slice(-1))
   }, [])
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/restaurants/${id}/ratings`)
+    .then(r => r.json())
+    .then(res => {
+      setRatings(res)
+    })
+  }, [id])
 
   useEffect(() => {
     let id = window.location.href.slice(-1)
@@ -69,6 +91,7 @@ function RestaurantPage () {
   function handleAddressSubmit(e){
     e.preventDefault();
     setAddress(addressChange);
+    setDeliveryFee(Math.floor(Math.random() * 11))
   }
 
   function handleClick(e){
@@ -81,29 +104,31 @@ function RestaurantPage () {
   ]
 
   let confirmedAddress = [
-    <span className="known-km address-text-small">📍 {Math.floor(Math.random() * 11)} km 🕑 {Math.floor(Math.random() * 21)} mins</span>
+    <span className="known-km address-text-small">📍 {number1} km 🕑 {number2} mins</span>
   ]
 
-  const foodOrders = [
-    {
-      name: "Cheeseburger",
-      restaurant: "Red Star Noodle",
-      price: 14,
-      image_url: "https://loremflickr.com/300/400/food,meal"
-    },
-    {
-      name: "Not Cheeseburger",
-      restaurant: "Red Star Noodle",
-      price: 20,
-      image_url: "https://loremflickr.com/300/400/food,meal"
-    },
-    {
-      name: "Hamburger",
-      restaurant: "Red Star Noodle",
-      price: 15,
-      image_url: "https://loremflickr.com/300/400/food,meal"
+  function createOrder(order){
+    fetch('http://localhost:9292/orders', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(order),
+    })
+    .then(r => r.json())
+  }
+
+  function handleOrderSubmit(){
+    if (order) {
+      createOrder(order)
     }
-  ]
+  };
+
+  const warningText = <p className="warning-text">the cart is empty</p>
+
+  function getTotal(){
+    setTotal(order.price);
+  }
 
   return (
     <div className="restaurant-page">
@@ -122,7 +147,7 @@ function RestaurantPage () {
           <p className="sponsor-text">Sponsored</p>
         </div>
         <RestaurantSearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
-        <RestaurantList services={displayedRestaurants} id={id}/>
+        <RestaurantList ratings={ratings} services={displayedRestaurants} id={id}/>
       </div>
       <div className="order-column">
         <h3>My Order:</h3>
@@ -131,18 +156,13 @@ function RestaurantPage () {
             <p className="address-text">{address ? address : <AddressForm addressChange={addressChange} onAddressChange={onAddressChange} handleAddressSubmit={handleAddressSubmit}/>}</p>
             {address ? confirmedAddress : unknownAddress}
             {address ? <button className="change-address-button" onClick={handleClick}>change address</button> : null}
-            <OrderList orders={foodOrders}/>
+            <OrderList order={order}/>
             <div className="checkout-info">
               <p className="subtotal"><strong>Subtotal: </strong>${subtotal}</p>
               <p className="delivery-fees"><strong>Delivery Fees: </strong>${deliveryFee}</p>
-              <input
-                className="promo-input"
-                type="text"
-                value={promo}
-                onChange={(e) => setPromo(e.target.value)}
-                placeholder="Promo code?"
-              />
               <p className="total"><strong>Total: </strong>${total}</p>
+              <button className="place-order" type="button" onClick={handleOrderSubmit}>Place Order</button>
+              {order[0] ? null : warningText}
             </div>
         </div>
       </div>

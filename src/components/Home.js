@@ -10,20 +10,12 @@ function Home () {
       <NavBar />
       <div className="container">
       <div className="text-container">
-        <h1>Delivery in under an hour GUARANTEED</h1>
-        <h3>or your money back</h3>
+        <h1 className="home-h1">Delivery in under an hour GUARANTEED</h1>
+        <h3 className="home-h3">or your money back</h3>
       </div>
         <img className="delivery-image" alt="driver on scooter delivering food" src={deliveryDriver}/>
       </div>
       <DeliveryCards />
-      <div className="form">
-        <form className="zipcode-form">
-          <label>
-            <input className="form-input" type="text" placeholder="Enter your zipcode..."/>
-          </label>
-          <input className="submit" type="submit" value="Submit" />
-        </form>
-        </div>
       </div>
   );
 }

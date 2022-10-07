@@ -1,6 +1,6 @@
 .logo {
   font-size: 1.25em;
-  padding-left: 0.5rem;
+  padding-left: 1em;
   padding-right: 0.5rem;
   color: transparent;
   text-shadow: 0 0 0 var(--green);
@@ -14,6 +14,7 @@
   position: sticky;
   padding: 30px;
   text-decoration: none;
+  color: white;
 }
 
 .navbar {
@@ -27,12 +28,12 @@
   width: 100%;
   margin:0;
   padding: 0;
-  background-color: rgb(203, 203, 217);
+  background-color: black;
 }
 
 .delivery-image {
   width: 300px;
-  height: 450px;
+  height: 400px;
 }
 
 .container {
@@ -53,8 +54,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 400px;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .zipcode-form {
@@ -77,7 +78,7 @@
 
 .grubhub-logo {
   border-radius: 25px;
-  background: rgb(203, 203, 217);
+  background: white;
   padding: 20px;
   width: 200px;
   height: 150px;
@@ -114,7 +115,7 @@
 
 .postmates-logo {
   border-radius: 25px;
-  background: rgb(203, 203, 217);
+  background: white;
   padding: 20px;
   width: 200px;
   height: 150px;
@@ -149,7 +150,7 @@
 
 .doordash-logo {
   border-radius: 25px;
-  background: rgb(203, 203, 217);
+  background:white;
   padding: 20px;
   width: 200px;
   height: 150px;
@@ -184,9 +185,10 @@
 
 .uber-eats-logo {
   border-radius: 25px;
-  background: rgb(203, 203, 217);
-  padding: 20px;
-  width: 200px;
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 240px;
   height: 150px;
   margin: 20px;
   transition: 0.5s;
@@ -221,7 +223,7 @@
 
 .joyrun-logo {
   border-radius: 25px;
-  background: rgb(203, 203, 217);
+  background: white;
   padding: 20px;
   width: 200px;
   height: 150px;
@@ -494,6 +496,7 @@ ul.cards {
   display:flex;
   align-items:center;
   justify-content: center;
+  color: white;
 }
 .about-cards {
   display:inline;
@@ -533,10 +536,12 @@ ul.cards {
 .about-bio {
   font-size: 25px;
   text-align: center;
+  color: white;
 }
 .head {
   text-align: center;
   font-size: 50px;
+  color: white;
 }
 .contact {
   text-align: center;
@@ -616,7 +621,7 @@ ul.cards {
 }
 
 .col {
-  height: 20rem;
+  height: 24rem;
 }
 
 .card {
@@ -725,3 +730,65 @@ ul.cards {
   top: 1.1em;
   left: 1em;
 }
+
+.delivery-depot {
+  color: white;
+}
+
+.contact-page {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.phone-number {
+  color: white;
+}
+
+.email-contact {
+  color: white;
+}
+
+.place-order {
+  background-color: white;
+  width: 209px;
+  height: 50px;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 2rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color:rgb(130, 130, 130);
+}
+
+.place-order:hover {
+  color: black;
+}
+
+.warning-text {
+  margin-left: 3.2rem;
+  font-style: italic;
+}
+
+.Home{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.home-h1 {
+  color: white;
+}
+
+.home-h3 {
+  color: white;
+}
+
