@@ -1,7 +1,8 @@
 import React from "react"; 
 import NavBar from './NavBar';
 import deliveryDriver from '../assets/deliveryDriver.png';
-import DeliveryCards from './DeliveryCards'
+import DeliveryCards from './DeliveryCards';
+
 
 function Home () {
   return (

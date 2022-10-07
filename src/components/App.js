@@ -7,7 +7,6 @@ import Orders from './Orders'
 import About from './About'
 import RestaurantPage from './RestaurantPage';
 import DishesPage from './DishesPage';
-import { UserContext } from './CreateContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
   return (
     <div className="app">  
       <Router>
-        <UserContext.Provider value={{ restaurantId, setRestaurantId }}>
         <Routes>
             <Route exact path="/" element={
                 <Home />
@@ -33,7 +31,6 @@ function App() {
                 <About />
             }/>
             </Routes>   
-            </UserContext.Provider>
         </Router>
     </div>
 )};

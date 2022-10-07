@@ -4,6 +4,8 @@ import Orders from './Orders'
 import RestaurantList from './RestaurantList'
 import RestaurantSearchBar from "./RestaurantSearchBar";
 import SideBar from "./SideBar";
+import LoadingScreen from "./LoadingScreen";
+import OrderList from "./OrderList";
 
 
 function RestaurantPage () {
@@ -13,12 +15,23 @@ function RestaurantPage () {
     const [addressChange, onAddressChange] = useState("");
     const [address, setAddress] = useState("");
     const [id, setId] = useState("");
+    const [subtotal, setSubtotal] = useState(0);
+    const [deliveryFee, setDeliveryFee] = useState(0);
+    const [total, setTotal] = useState(0);
+    const [promo, setPromo] = useState("");
+    const [orders, setOrders] = useState(null);
 
     useEffect(() => {
         fetch(`http://localhost:9292/delivery/${window.location.href.slice(-1)}/restaurants`)
         .then((r) => r.json())
       .then((service) => setService(service));
   }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/restaurants/5/ratings`)
+    .then((r) => r.json())
+  .then(r => console.log(r));
+}, []);
 
   useEffect(() => {
     setId(window.location.href.slice(-1))
@@ -47,7 +60,7 @@ function RestaurantPage () {
     }
   }, [])
 
-  if (!service) return <h2>Loading available restaurants...</h2>;
+  if (!service) return <LoadingScreen />;
 
   const displayedRestaurants = service.filter((service) => {
     return service.category.toLowerCase().includes(searchTerm.toLowerCase()) || service.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -71,13 +84,36 @@ function RestaurantPage () {
     <span className="known-km address-text-small">📍 {Math.floor(Math.random() * 11)} km 🕑 {Math.floor(Math.random() * 21)} mins</span>
   ]
 
+  const foodOrders = [
+    {
+      name: "Cheeseburger",
+      restaurant: "Red Star Noodle",
+      price: 14,
+      image_url: "https://loremflickr.com/300/400/food,meal"
+    },
+    {
+      name: "Not Cheeseburger",
+      restaurant: "Red Star Noodle",
+      price: 20,
+      image_url: "https://loremflickr.com/300/400/food,meal"
+    },
+    {
+      name: "Hamburger",
+      restaurant: "Red Star Noodle",
+      price: 15,
+      image_url: "https://loremflickr.com/300/400/food,meal"
+    }
+  ]
+
   return (
     <div className="restaurant-page">
       <SideBar />
       <div className="main-column">
         <div className="restaurant-header">
           <span role="img">
+            <a href="/">
               <img className="delivery-picture" src="https://cdn-icons-png.flaticon.com/512/1048/1048329.png"></img>
+            </a>
           </span>
           <h1 className="restaurant-header">Uber Eats</h1>
         </div>
@@ -91,12 +127,24 @@ function RestaurantPage () {
       <div className="order-column">
         <h3>My Order:</h3>
         <div className="order-column-top">
-            <p className="deliver-to">Deliver to:</p>
+            <p className="deliver-to"><strong>Deliver to:</strong></p>
             <p className="address-text">{address ? address : <AddressForm addressChange={addressChange} onAddressChange={onAddressChange} handleAddressSubmit={handleAddressSubmit}/>}</p>
-            {address ? <button onClick={handleClick}>change address</button> : null}
             {address ? confirmedAddress : unknownAddress}
+            {address ? <button className="change-address-button" onClick={handleClick}>change address</button> : null}
+            <OrderList orders={foodOrders}/>
+            <div className="checkout-info">
+              <p className="subtotal"><strong>Subtotal: </strong>${subtotal}</p>
+              <p className="delivery-fees"><strong>Delivery Fees: </strong>${deliveryFee}</p>
+              <input
+                className="promo-input"
+                type="text"
+                value={promo}
+                onChange={(e) => setPromo(e.target.value)}
+                placeholder="Promo code?"
+              />
+              <p className="total"><strong>Total: </strong>${total}</p>
+            </div>
         </div>
-        <br className="order-line-break"/>
       </div>
     </div>
   );

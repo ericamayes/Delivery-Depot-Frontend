@@ -3,19 +3,17 @@ import Orders from './Orders'
 import DishList from './DishList'
 import RestaurantSearchBar from "./RestaurantSearchBar";
 import SideBar from "./SideBar";
-import { UserContext } from "./CreateContext";
+
 
 
 function DishPage () {
     const [restaurant, setRestaurant] = useState(null);
     const [header, setHeader] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
-    const { restaurantId, setRestaurantId } = useContext(UserContext)
+    
     const [id, setId] = useState(null);
 
-    useEffect(() => {
-        setId(restaurantId)
-    },[])
+   
 
     useEffect(() => {
         fetch(`http://localhost:9292/restaurants/${window.location.href.split(/\//)[5]}/dishes`)
