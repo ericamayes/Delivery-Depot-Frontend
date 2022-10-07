@@ -1,16 +1,22 @@
+import React, {useState} from 'react';
 
-
-function DishCard( {restaurant} ) {
+function DishCard( {restaurant, setOrder, restaurantName, setDisplay} ) {
     const {name,  price, image_url} = restaurant;
   
     function handleClick(){
-  
+        setOrder({
+            name: name,
+            price: price,
+            restaurant_name: restaurantName,
+            image_url: image_url
+        })
+        setDisplay(true);
     }
     
   //   should we also do rating? can't access it from the current table, though
   
     return (
-      <li className="individual-card">
+      <li onClick={() => handleClick()} className="individual-card">
         <div className="container-card">
             <div className="row">
                 <div className="dishes-col">
@@ -23,7 +29,7 @@ function DishCard( {restaurant} ) {
                                   <h4>{name}</h4> 
                                  )}
                                     <div className="primary">
-                                        <btn className = "order-btn" onClick={handleClick}>
+                                        <btn className = "order-btn" onClick={() => handleClick}>
                                             Add to order
                                         </btn>
                                     </div>

@@ -1,20 +1,19 @@
 import { useNavigate } from "react-router-dom";
 // import Card from 'react-bootstrap/Card'
 
-function RestaurantCard( {service, id, ratings} ) {
+function RestaurantCard( {service, id, ratings, handleRestaurantClick, restaurantId, setRestaurantId, setRestaurantName } ) {
   const {name, category, image_url} = service;
 //   should we also do rating? can't access it from the current table, though
-  function specifyRatings(ratings){
-    
 
-    ratings.filter((rating) => {
-        return rating.restaurant_id == service.id
-    })
-  }
+    function handleClicking(){
+      handleRestaurantClick()
+      setRestaurantId(service.id)
+      setRestaurantName(name)
+    }
 
   const navigate = useNavigate();
   return (
-      <li onClick={() => navigate(`/restaurants/order/${service.id}`)} className="individual-card">
+      <li onClick={() => handleClicking()} className="individual-card">
         <div className="container-card">
           <div className="row">
             <div className="col">
@@ -23,7 +22,6 @@ function RestaurantCard( {service, id, ratings} ) {
                 <div className="card-text">
                   <h3>{name}</h3>
                   <p><em>{category}</em></p>
-                  <p>{specifyRatings(ratings)} of out 5</p>
                 </div>
               </div>
             </div>

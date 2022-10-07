@@ -4,10 +4,11 @@ import Orders from './Orders'
 import DishList from './DishList'
 import RestaurantSearchBar from "./RestaurantSearchBar";
 import SideBar from "./SideBar";
+import LoadingScreen from "./LoadingScreen";
+import OrderList from "./OrderList";
 
-
-
-function DishPage () {
+function DishPage ({ address, AddressForm, addressChange, onAddressChange, handleAddressSubmit, confirmedAddress, unknownAddress, handleClick, subtotal, setSubtotal, deliveryFee, setDeliveryFee, total, setTotal, handleOrderSubmit}) {
+    const warningText = <p className="warning-text">the cart is empty</p>
     const [restaurant, setRestaurant] = useState(null);
     const [header, setHeader] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
@@ -27,9 +28,8 @@ console.log(window.location.href.substring(-7))
 
 
 
-  if (!restaurant) return <h2>Loading available restaurants...</h2>;
+  if (!restaurant) return <LoadingScreen />;
 // REWRITE FILTER METHOD HERE
-  const displayedDishes = restaurant
 
 
   return (
@@ -42,18 +42,7 @@ console.log(window.location.href.substring(-7))
           </span>
           <h1 className="restaurant-header"></h1>
           </div>
-
-
-
- 
-        <RestaurantSearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
-        <DishList restaurants={displayedDishes}/>
-      </div>
-      <div className="order-column">
-        <h3>My Order:</h3>
-        <div className="order-column-top">
-            <p>Deliver to:</p>
-        </div>
+        <DishList restaurants={restaurant}/>
       </div>
     </div>
   );
