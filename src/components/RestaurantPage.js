@@ -16,11 +16,9 @@ function RestaurantPage () {
     const [addressChange, onAddressChange] = useState("");
     const [address, setAddress] = useState("");
     const [id, setId] = useState("");
-    const [subtotal, setSubtotal] = useState(0);
     const [deliveryFee, setDeliveryFee] = useState(0);
     const [total, setTotal] = useState(0);
-    const [promo, setPromo] = useState("");
-    const [order, setOrder] = useState({});
+    const [order, setOrder] = useState([]);
     const [ratings, setRatings] = useState([])
     const [restaurant, setRestaurant] = useState([])
     const [switchTrue, setSwitchTrue] = useState(false)
@@ -61,6 +59,14 @@ const number2 = Math.floor(Math.random() * 20)
   //     }
   //   setOrder(foodOrders);
   // }, [])
+
+  function getTotalPrice(orders){
+    let totalValue = 0;
+    orders.forEach((order) => {
+      totalValue += order.price
+    })
+    return totalValue;
+  }
 
   useEffect(() => {
     if (deliveryFee && order.price > 0) {
@@ -125,16 +131,19 @@ const number2 = Math.floor(Math.random() * 20)
   ]
 
   function createOrder(order){
-    fetch('http://localhost:9292/orders', {
+    console.log(order)
+    order.forEach((order) => {
+      fetch(`http://localhost:9292/orders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(order),
+      body: JSON.stringify(order["newOrder"]),
     })
     .then(r => r.json())
     .then(setOrder({}))
     .then(setDisplay(false))
+    })
   }
 
   function handleOrderSubmit(){
@@ -142,6 +151,10 @@ const number2 = Math.floor(Math.random() * 20)
       createOrder(order)
     }
   };
+
+  function handleSetOrder(newOrder){
+    setOrder([...order, {newOrder}])
+  }
 
   const warningText = <p className="warning-text">the cart is empty</p>
 
@@ -157,7 +170,7 @@ const number2 = Math.floor(Math.random() * 20)
       </span>
       <h1 className="restaurant-header">{restaurantName}</h1>
       </div>
-    <DishList restaurants={restaurant} setOrder={setOrder} restaurantName={restaurantName} setDisplay={setDisplay}/>
+    <DishList restaurants={restaurant} handleSetOrder={handleSetOrder} restaurantName={restaurantName} setDisplay={setDisplay}/>
   </div>
   </div>
 

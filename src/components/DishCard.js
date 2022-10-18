@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-function DishCard( {restaurant, setOrder, restaurantName, setDisplay} ) {
+function DishCard( {restaurant, handleSetOrder, restaurantName, setDisplay} ) {
     const {name,  price, image_url} = restaurant;
   
     function handleClick(){
-        setOrder({
+        handleSetOrder({
             name: name,
             price: price,
             restaurant_name: restaurantName,

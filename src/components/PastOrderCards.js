@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function PastOrderCards({ order }){
     console.log(order)
+    console.log(order)
     return (
         <div className="past-order-cards">
             <img className="past-order-image" src={order.image_url}/>

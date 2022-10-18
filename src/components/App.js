@@ -10,13 +10,6 @@ import DishesPage from './DishesPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-    const [addressChange, onAddressChange] = useState("");
-    const [address, setAddress] = useState("");
-    const [id, setId] = useState("");
-    const [subtotal, setSubtotal] = useState(0);
-    const [deliveryFee, setDeliveryFee] = useState(0);
-    const [total, setTotal] = useState(0);
-    const [order, setOrder] = useState([]);
 
   return (
     <div className="app">
