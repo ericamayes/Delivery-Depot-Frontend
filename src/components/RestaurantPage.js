@@ -43,9 +43,9 @@ function RestaurantPage () {
       .then((service) => setService(service));
   }, []);
 
-  useEffect(() => {
-    getTotal(order)
-  }, [order])
+  // useEffect(() => {
+  //   getTotal(order)
+  // }, [order])
 
 const number1 = Math.floor(Math.random() * 10)
 
@@ -61,6 +61,16 @@ const number2 = Math.floor(Math.random() * 20)
   //     }
   //   setOrder(foodOrders);
   // }, [])
+
+  useEffect(() => {
+    if (deliveryFee && order.price > 0) {
+      setTotal(deliveryFee + order.price)
+    } else if (deliveryFee > 0) {
+      setTotal(deliveryFee)
+    } else if (order.price > 0) {
+      setTotal(order.price)
+    }
+  }, [deliveryFee, order])
 
   useEffect(() => {
     setId(window.location.href.slice(-1))
@@ -135,9 +145,9 @@ const number2 = Math.floor(Math.random() * 20)
 
   const warningText = <p className="warning-text">the cart is empty</p>
 
-  function getTotal(){
-    setTotal(order.price);
-  }
+  // function getTotal(){
+  //   setTotal(order.price && deliveryFee > 0 ? order.price + deliveryFee : order.price);
+  // }
 
   const deliveryPage = <div className="delivery-page">
   <div className="main-column">
@@ -145,7 +155,7 @@ const number2 = Math.floor(Math.random() * 20)
       <span role="img">
           <img className="delivery-picture" src="https://cdn-icons-png.flaticon.com/512/1048/1048329.png"></img>
       </span>
-      <h1 className="restaurant-header"></h1>
+      <h1 className="restaurant-header">{restaurantName}</h1>
       </div>
     <DishList restaurants={restaurant} setOrder={setOrder} restaurantName={restaurantName} setDisplay={setDisplay}/>
   </div>
@@ -186,7 +196,6 @@ const number2 = Math.floor(Math.random() * 20)
             {address ? <button className="change-address-button" onClick={handleClick}>change address</button> : null}
             {display ? <OrderList order={order}/> : null}
             <div className="checkout-info">
-              <p className="subtotal"><strong>Subtotal: </strong>${subtotal}</p>
               <p className="delivery-fees"><strong>Delivery Fees: </strong>${deliveryFee}</p>
               <p className="total"><strong>Total: </strong>${total}</p>
               <button className="place-order" type="button" onClick={handleOrderSubmit}>Place Order</button>

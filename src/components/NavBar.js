@@ -12,7 +12,6 @@ function NavBar () {
             <span>
             <h2 className="delivery-depot">DeliveryDepot</h2>
           </span>
-            <h2>DeliveryDepot</h2>
             <nav className="navbar">
                 <ul className="navbar-container">
                   <Link className="nav-links" to="/">

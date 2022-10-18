@@ -16,7 +16,7 @@ function DishCard( {restaurant, setOrder, restaurantName, setDisplay} ) {
   //   should we also do rating? can't access it from the current table, though
   
     return (
-      <li onClick={() => handleClick()} className="individual-card">
+      <li onClick={() => handleClick()} className="individual-card dish-cards-styling">
         <div className="container-card">
             <div className="row">
                 <div className="dishes-col">

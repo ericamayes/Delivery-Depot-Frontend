@@ -19,7 +19,7 @@ function App() {
     const [order, setOrder] = useState([]);
 
   return (
-    <div className="app">  
+    <div className="app">
       <Router>
         <Routes>
             <Route exact path="/" element={
